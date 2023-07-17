@@ -32,13 +32,16 @@ def login_button(authorization_url, app_name, app_desc):
     # st.markdown('''<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     #integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">''',
     #unsafe_allow_html=True)
-
+    cols = st.columns([3, 4, 3])
+    
     container = f'''
         <a target="_self" href="{authorization_url}">
-            <img class="img-fluid" src="https://www.oncrashreboot.com/images/create-apple-google-signin-buttons-quick-dirty-way-google.png" alt="streamlit">
+            <img class="img-fluid" style="max-width: 12rem;" src="https://www.oncrashreboot.com/images/create-apple-google-signin-buttons-quick-dirty-way-google.png" alt="streamlit">
         </a>
     '''
-    st.markdown(container, unsafe_allow_html=True)
+    with cols[1]:
+        with st.expander('Login', expanded=True):
+            st.markdown(container, unsafe_allow_html=True)
 
 
 def logout_button(button_text):
@@ -104,5 +107,7 @@ def login(
                     logout_button(button_text=logout_button_text)
                     return (st.session_state.user_id, st.session_state.user_email)
     else:
-        logout_button(button_text=logout_button_text)
+        cols = st.columns([9, 1])
+        with cols[1]:
+            logout_button(button_text=logout_button_text)
         return (st.session_state.user_id, st.session_state.user_email)
