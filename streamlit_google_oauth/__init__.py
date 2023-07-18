@@ -35,9 +35,14 @@ def login_button(authorization_url, app_name, app_desc):
     cols = st.columns([3, 4, 3])
     
     container = f'''
+        <br/>
+        <br/>
         <a target="_self" href="{authorization_url}">
             <img class="img-fluid" style="max-width: 12rem;" src="https://www.oncrashreboot.com/images/create-apple-google-signin-buttons-quick-dirty-way-google.png" alt="streamlit">
         </a>
+        <br/>
+        <br/>
+        
     '''
     with cols[1]:
         with st.expander('Login', expanded=True):
