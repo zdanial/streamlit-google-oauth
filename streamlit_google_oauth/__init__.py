@@ -32,6 +32,7 @@ def login_button(authorization_url, app_name, app_desc):
     # st.markdown('''<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     #integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">''',
     #unsafe_allow_html=True)
+    st.markdown("""<div style="height:30vh;"=/>""", unsafe_allow_html=True)
     cols = st.columns([3, 4, 3])
     
     container = f'''
@@ -44,6 +45,7 @@ def login_button(authorization_url, app_name, app_desc):
         <br/>
         
     '''
+    
     with cols[1]:
         with st.expander('Login', expanded=True):
             st.markdown(container, unsafe_allow_html=True)
